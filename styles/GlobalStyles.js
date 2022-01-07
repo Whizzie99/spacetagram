@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     :root{
         --font-stack-1: 'Nunito', sans-serif;
         --font-stack-2: 'Pacifico', cursive;
+        --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         --white: #fff;
         --black: #000;
     }

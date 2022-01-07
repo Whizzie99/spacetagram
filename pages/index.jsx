@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components'
+import CardList from '../components/CardList/CardList'
 import Container from '../components/Container/Container'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <StyledWrapper>
         <Container>
           <StyledTitle>spacetagram</StyledTitle>
+          <CardList/>
         </Container>
       </StyledWrapper>
     </>
@@ -27,5 +29,7 @@ const StyledWrapper = styled.div`
 
 const StyledTitle = styled.h1`
   font-family: var(--font-stack-2);
+  text-transform: capitalize;
   text-align: center;
+  margin: 40px 0;
 `
