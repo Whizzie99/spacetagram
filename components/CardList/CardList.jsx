@@ -1,31 +1,24 @@
-// import styled from "styled-components";
+import { useAxios } from 'use-axios-client';
 import Card from "../Card/Card";
 import { StyledWrapper } from "./styles";
 
 
-// fetch request
-// export const getStaticProps = async () =>{
-//     const res = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
-//     const data = await res.json();
-//     console.log(data);
+const CardList = () => {
+    // fetch request
+    const { data, loading, error } = useAxios({
+        url: `https://api.nasa.gov/planetary/apod?api_key=${process.env.NEXT_PUBLIC_API_KEY}&count=18`
+    })
 
-//     return {
-//         props: {nasaimages: data}
-//     }
-// }
-
-const CardList = ({ nasaimages }) => {
     return (
         <StyledWrapper>
-            {/* {
-                nasaimages.map((Nasaimage, i) =>(
-                    <Card key={i} image={}/>
+            {loading && <div>please wait...</div>}
+            {error && <div>unable to fetch</div>}
+            {
+                data &&
+                data.map((apod,i) =>(
+                    <Card key={i} title={apod.title} image={apod.url} date={apod.date} description={apod.explanation}/>
                 ))
-            } */}
-            
-            <Card/>
-            <Card/>
-            <Card/>
+            }
         </StyledWrapper>
     );
 }
