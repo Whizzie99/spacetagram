@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { StyledWrapper } from "./styles";
 
-import test from '../../public/images/test1.gif'
+import test from '../../public/images/test.gif'
 
 const Spinner = () => {
     return (
