@@ -17,7 +17,7 @@ const Card = ({title, image, date, description}) => {
     return (
         <StyledCard>
             <StyledImageDiv>
-                <Image src={image} layout="fill" objectFit="cover" alt="sample image"/>
+                <Image src={image} layout="fill" objectFit="cover" alt={title}/>
             </StyledImageDiv>
             <StyledBody>
                 <StyledHead>
